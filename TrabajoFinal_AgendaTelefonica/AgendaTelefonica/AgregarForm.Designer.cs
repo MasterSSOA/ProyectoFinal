@@ -36,18 +36,19 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lbID = new System.Windows.Forms.Label();
             this.tbID = new System.Windows.Forms.TextBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(58, 26);
+            this.tbNombre.Location = new System.Drawing.Point(12, 72);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(189, 20);
             this.tbNombre.TabIndex = 0;
             // 
             // tbTelefono
             // 
-            this.tbTelefono.Location = new System.Drawing.Point(264, 26);
+            this.tbTelefono.Location = new System.Drawing.Point(12, 117);
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(100, 20);
             this.tbTelefono.TabIndex = 1;
@@ -55,7 +56,7 @@
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(55, 10);
+            this.lbNombre.Location = new System.Drawing.Point(9, 56);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(44, 13);
             this.lbNombre.TabIndex = 2;
@@ -64,7 +65,7 @@
             // lbTelefono
             // 
             this.lbTelefono.AutoSize = true;
-            this.lbTelefono.Location = new System.Drawing.Point(261, 10);
+            this.lbTelefono.Location = new System.Drawing.Point(9, 101);
             this.lbTelefono.Name = "lbTelefono";
             this.lbTelefono.Size = new System.Drawing.Size(49, 13);
             this.lbTelefono.TabIndex = 3;
@@ -72,17 +73,18 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(289, 70);
+            this.btnAgregar.Location = new System.Drawing.Point(164, 153);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Visible = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(208, 70);
+            this.btnCancelar.Location = new System.Drawing.Point(83, 153);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -107,11 +109,23 @@
             this.tbID.Size = new System.Drawing.Size(37, 20);
             this.tbID.TabIndex = 6;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(164, 153);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 3;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Visible = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // AgregarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 106);
+            this.ClientSize = new System.Drawing.Size(320, 183);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.tbID);
             this.Controls.Add(this.btnCancelar);
@@ -132,11 +146,12 @@
         #endregion
         private System.Windows.Forms.Label lbNombre;
         private System.Windows.Forms.Label lbTelefono;
-        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox tbNombre;
-        private System.Windows.Forms.TextBox tbTelefono;
         private System.Windows.Forms.Label lbID;
         public System.Windows.Forms.TextBox tbID;
+        public System.Windows.Forms.TextBox tbNombre;
+        public System.Windows.Forms.Button btnActualizar;
+        public System.Windows.Forms.Button btnAgregar;
+        public System.Windows.Forms.TextBox tbTelefono;
     }
 }

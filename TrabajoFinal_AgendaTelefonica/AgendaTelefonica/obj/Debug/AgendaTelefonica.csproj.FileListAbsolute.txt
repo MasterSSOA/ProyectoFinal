@@ -9,3 +9,14 @@ C:\Users\Antho\source\repos\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTe
 C:\Users\Antho\source\repos\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\obj\Debug\AgendaTelefonica.pdb
 C:\Users\Antho\source\repos\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\obj\Debug\AgendaTelefonica.PrincipalForm.resources
 C:\Users\Antho\source\repos\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\obj\Debug\AgendaTelefonica.AgregarForm.resources
+C:\Projects\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\bin\Debug\AgendaTelefonica.exe.config
+C:\Projects\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\bin\Debug\AgendaTelefonica.exe
+C:\Projects\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\bin\Debug\AgendaTelefonica.pdb
+C:\Projects\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\obj\Debug\AgendaTelefonica.csprojAssemblyReference.cache
+C:\Projects\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\obj\Debug\AgendaTelefonica.PrincipalForm.resources
+C:\Projects\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\obj\Debug\AgendaTelefonica.Properties.Resources.resources
+C:\Projects\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\obj\Debug\AgendaTelefonica.csproj.GenerateResource.cache
+C:\Projects\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\obj\Debug\AgendaTelefonica.csproj.CoreCompileInputs.cache
+C:\Projects\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\obj\Debug\AgendaTelefonica.exe
+C:\Projects\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\obj\Debug\AgendaTelefonica.pdb
+C:\Projects\ProyectoFinal\TrabajoFinal_AgendaTelefonica\AgendaTelefonica\obj\Debug\AgendaTelefonica.AgregarForm.resources
