@@ -40,12 +40,14 @@
             this.lbMetodoBuscar = new System.Windows.Forms.Label();
             this.cmbMetodoBuscar = new System.Windows.Forms.ComboBox();
             this.tbCampoBuscar = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.gbMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgContactos)).BeginInit();
             this.SuspendLayout();
             // 
             // gbMenu
             // 
+            this.gbMenu.Controls.Add(this.label3);
             this.gbMenu.Controls.Add(this.label1);
             this.gbMenu.Controls.Add(this.lbTitulo);
             this.gbMenu.Controls.Add(this.dgContactos);
@@ -59,7 +61,7 @@
             this.gbMenu.Controls.Add(this.tbCampoBuscar);
             this.gbMenu.Location = new System.Drawing.Point(7, 1);
             this.gbMenu.Name = "gbMenu";
-            this.gbMenu.Size = new System.Drawing.Size(462, 422);
+            this.gbMenu.Size = new System.Drawing.Size(462, 433);
             this.gbMenu.TabIndex = 13;
             this.gbMenu.TabStop = false;
             // 
@@ -146,6 +148,7 @@
             this.btnBuscar.TabIndex = 16;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lbMetodoBuscar
             // 
@@ -175,11 +178,21 @@
             this.tbCampoBuscar.Size = new System.Drawing.Size(165, 20);
             this.tbCampoBuscar.TabIndex = 13;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(108, 414);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(248, 15);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "© Anthony Reyes - Franddy Thomas - Robinson Remigio";
+            // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 430);
+            this.ClientSize = new System.Drawing.Size(479, 441);
             this.Controls.Add(this.gbMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PrincipalForm";
@@ -206,6 +219,7 @@
         private System.Windows.Forms.ComboBox cmbMetodoBuscar;
         private System.Windows.Forms.TextBox tbCampoBuscar;
         public System.Windows.Forms.GroupBox gbMenu;
+        private System.Windows.Forms.Label label3;
     }
 }
 

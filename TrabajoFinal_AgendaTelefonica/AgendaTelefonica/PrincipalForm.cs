@@ -24,6 +24,7 @@ namespace AgendaTelefonica
         DialogResult _Resultado;
 
         public DataTable dataTable = new DataTable();
+        DataTable dataTableFiltrado = new DataTable();
         AgregarForm agregarForm = new AgregarForm();
         
         public PrincipalForm()
@@ -33,9 +34,15 @@ namespace AgendaTelefonica
 
         private void PrincipalForm_Load(object sender, EventArgs e)
         {
+            cmbMetodoBuscar.SelectedIndex = 1;
+
             dataTable.Columns.Add("ID", typeof(int));
             dataTable.Columns.Add("Nombre", typeof(string));
             dataTable.Columns.Add("Teléfono", typeof(string));
+
+            dataTableFiltrado.Columns.Add("ID", typeof(int));
+            dataTableFiltrado.Columns.Add("Nombre", typeof(string));
+            dataTableFiltrado.Columns.Add("Teléfono", typeof(string));
 
             List<Conctacto> conctactos = new List<Conctacto>()
             {
@@ -90,8 +97,6 @@ namespace AgendaTelefonica
             gbMenu.Enabled = false;
         }
 
-       
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             agregarForm.btnActualizar.Visible = true;
@@ -106,7 +111,18 @@ namespace AgendaTelefonica
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-          
+            _Mensaje = "¿Seguro que desea eliminar este registro?";
+            _Titulo = "Eliminar Registro";
+
+            _Resultado = MessageBox.Show(_Mensaje, _Titulo, _BotonesYesNo);
+            if (_Resultado == DialogResult.Yes)
+            {
+                FilaSeleccionada = dgContactos.CurrentCell.RowIndex;
+                dgContactos.Rows.RemoveAt(FilaSeleccionada);
+
+                btnEditar.Enabled = false;
+                btnBorrar.Enabled = false;
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -119,6 +135,53 @@ namespace AgendaTelefonica
             {
                 this.Close();
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dataTableFiltrado.Clear();
+
+            try
+            {
+                if (tbCampoBuscar.Text == string.Empty)
+                {
+                    dgContactos.DataSource = dataTable;
+                }
+                else
+                {
+                    string Filtro;
+                    if(cmbMetodoBuscar.SelectedItem.ToString() == "Nombre")
+                        Filtro = ""+ cmbMetodoBuscar.SelectedItem.ToString() +" like '%" + tbCampoBuscar.Text + "%'";
+                    else
+                        Filtro = "" + cmbMetodoBuscar.SelectedItem.ToString() + " = '" + Convert.ToInt32(tbCampoBuscar.Text) + "'";
+                    DataRow[] BuscarConctacto;
+
+                    BuscarConctacto = dataTable.Select(Filtro);
+
+                    for (int i = 0; i < BuscarConctacto.Length; i++)
+                    {
+                        FilaID = BuscarConctacto[i][0].ToString();
+                        FilaNombre = BuscarConctacto[i][1].ToString();
+                        FilaTelefono = BuscarConctacto[i][2].ToString();
+
+                        dataTableFiltrado.Rows.Add(FilaID, FilaNombre, FilaTelefono);
+;
+                        dgContactos.DataSource = dataTableFiltrado;
+                    }
+
+                    if (BuscarConctacto.Length == 0)
+                    {
+                        MessageBox.Show("No se encontraron registros.");
+                        dgContactos.DataSource = dataTable;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en : " + ex.Message);
+            }
+
+
         }
     }
 }

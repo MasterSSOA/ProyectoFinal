@@ -62,7 +62,6 @@ namespace AgendaTelefonica
             }
         }
 
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             PrincipalForm principalForm = (PrincipalForm)Application.OpenForms["PrincipalForm"];
