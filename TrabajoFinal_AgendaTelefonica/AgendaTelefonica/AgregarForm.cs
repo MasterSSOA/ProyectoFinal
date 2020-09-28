@@ -38,27 +38,35 @@ namespace AgendaTelefonica
             }
             else
             {
-                Conctacto conctacto = new Conctacto(Convert.ToInt32(tbID.Text), tbNombre.Text, tbTelefono.Text);
-                principalForm.dataTable.Rows.Add(conctacto.ID, conctacto.Nombre, conctacto.Telefono);
-
-                _Mensaje = "El contacto se ha agregado de forma exitosa.";
-                _Titulo = "Contacto";
-                MessageBox.Show(_Mensaje, _Titulo, MessageBoxButtons.OK);
-
-                _Mensaje = "¿Desea agregar otro contacto?";
-                _Titulo = "Contacto";
-
-                _Resultado = MessageBox.Show(_Mensaje, _Titulo, _BotonesYesNo);
-                if (_Resultado != DialogResult.Yes)
+                if (tbTelefono.Text.Length >= 10)
                 {
-                    this.Hide();
-                    principalForm.gbMenu.Enabled = true;
+                    Conctacto conctacto = new Conctacto(Convert.ToInt32(tbID.Text), tbNombre.Text, ConvertidorFormatoTel(tbTelefono.Text));
+                    principalForm.dataTable.Rows.Add(conctacto.ID, conctacto.Nombre, conctacto.Telefono);
+
+                    _Mensaje = "El contacto se ha agregado de forma exitosa.";
+                    _Titulo = "Contacto";
+                    MessageBox.Show(_Mensaje, _Titulo, MessageBoxButtons.OK);
+
+                    _Mensaje = "¿Desea agregar otro contacto?";
+                    _Titulo = "Contacto";
+
+                    _Resultado = MessageBox.Show(_Mensaje, _Titulo, _BotonesYesNo);
+                    if (_Resultado != DialogResult.Yes)
+                    {
+                        this.Hide();
+                        principalForm.gbMenu.Enabled = true;
+                    }
+                    else
+                        tbID.Text = Convert.ToString(Convert.ToInt32(tbID.Text) + 1);
+                    tbNombre.Clear();
+                    tbNombre.Focus();
+                    tbTelefono.Clear();
                 }
                 else
-                    tbID.Text = Convert.ToString(Convert.ToInt32(tbID.Text) + 1);
-                tbNombre.Clear();
-                tbNombre.Focus();
-                tbTelefono.Clear();
+                {
+                    MessageBox.Show("Número Invalido. Debe colocar el teléfono completo.");
+                    tbTelefono.Focus();
+                }
             }
         }
 
@@ -72,12 +80,20 @@ namespace AgendaTelefonica
             _Resultado = MessageBox.Show(_Mensaje, _Titulo, _BotonesYesNo);
             if (_Resultado == DialogResult.Yes)
             {
-                DataGridViewRow RegistroActualizacion = principalForm.dgContactos.Rows[principalForm.FilaSeleccionada];
-                RegistroActualizacion.Cells[0].Value = tbID.Text;
-                RegistroActualizacion.Cells[1].Value = tbNombre.Text;
-                RegistroActualizacion.Cells[2].Value = tbTelefono.Text;
-                principalForm.gbMenu.Enabled = true;
-                this.Hide();
+                if (tbTelefono.Text.Length >= 10)
+                {
+                    DataGridViewRow RegistroActualizacion = principalForm.dgContactos.Rows[principalForm.FilaSeleccionada];
+                    RegistroActualizacion.Cells[0].Value = tbID.Text;
+                    RegistroActualizacion.Cells[1].Value = tbNombre.Text;
+                    RegistroActualizacion.Cells[2].Value = ConvertidorFormatoTel(tbTelefono.Text);
+                    principalForm.gbMenu.Enabled = true;
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Número Invalido. Debe colocar el teléfono completo.");
+                    tbTelefono.Focus();
+                }
             }
             else
                 tbNombre.Focus();
@@ -106,5 +122,35 @@ namespace AgendaTelefonica
             }
         }
 
+        private void tbTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        //Método sobre conversión de número telefónico.
+        string ConvertidorFormatoTel(string NumeroTel)
+        {
+            string Area;
+            string PrimeraParte;
+            string SegundaParte;
+            string Resto = "";
+            string FullNumber;
+
+            Area = NumeroTel.Substring(0, 3);
+            PrimeraParte = NumeroTel.Substring(3, 3);
+            SegundaParte = NumeroTel.Substring(6, 4);
+            FullNumber = "(" + Area + ") " + PrimeraParte + "-" + SegundaParte + "";
+
+            if (NumeroTel.Length > 10)
+            {
+                Resto = NumeroTel.Substring(10);
+                FullNumber += "-" + Resto + "";
+            }
+
+            return FullNumber;
+        }
     }
 }

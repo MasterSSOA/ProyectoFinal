@@ -42,6 +42,7 @@
             // tbNombre
             // 
             this.tbNombre.Location = new System.Drawing.Point(12, 72);
+            this.tbNombre.MaxLength = 50;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(189, 20);
             this.tbNombre.TabIndex = 0;
@@ -49,9 +50,11 @@
             // tbTelefono
             // 
             this.tbTelefono.Location = new System.Drawing.Point(12, 117);
+            this.tbTelefono.MaxLength = 20;
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(100, 20);
             this.tbTelefono.TabIndex = 1;
+            this.tbTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTelefono_KeyPress);
             // 
             // lbNombre
             // 

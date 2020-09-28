@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbMenu = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.dgContactos = new System.Windows.Forms.DataGridView();
@@ -40,7 +41,6 @@
             this.lbMetodoBuscar = new System.Windows.Forms.Label();
             this.cmbMetodoBuscar = new System.Windows.Forms.ComboBox();
             this.tbCampoBuscar = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.gbMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgContactos)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +64,16 @@
             this.gbMenu.Size = new System.Drawing.Size(462, 433);
             this.gbMenu.TabIndex = 13;
             this.gbMenu.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(108, 414);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(248, 15);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "© Anthony Reyes - Franddy Thomas - Robinson Remigio";
             // 
             // label1
             // 
@@ -174,19 +184,10 @@
             // tbCampoBuscar
             // 
             this.tbCampoBuscar.Location = new System.Drawing.Point(281, 66);
+            this.tbCampoBuscar.MaxLength = 50;
             this.tbCampoBuscar.Name = "tbCampoBuscar";
             this.tbCampoBuscar.Size = new System.Drawing.Size(165, 20);
             this.tbCampoBuscar.TabIndex = 13;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(108, 414);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(248, 15);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "© Anthony Reyes - Franddy Thomas - Robinson Remigio";
             // 
             // PrincipalForm
             // 

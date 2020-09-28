@@ -85,6 +85,9 @@ namespace AgendaTelefonica
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            string IDvalue;
+            IDvalue = dgContactos.Rows[dgContactos.Rows.Count - 1].Cells[0].Value.ToString();
+
             agregarForm.Show();
             agregarForm.btnAgregar.Visible = true;
             if (agregarForm.tbNombre.Text != string.Empty || agregarForm.tbTelefono.Text != string.Empty)
@@ -93,7 +96,7 @@ namespace AgendaTelefonica
                 agregarForm.tbTelefono.Text = string.Empty;
             }
             agregarForm.tbNombre.Focus();
-            agregarForm.tbID.Text = Convert.ToString(dgContactos.Rows.Count + 1);
+            agregarForm.tbID.Text = Convert.ToString(int.Parse(IDvalue) + 1);
             gbMenu.Enabled = false;
         }
 
@@ -102,7 +105,7 @@ namespace AgendaTelefonica
             agregarForm.btnActualizar.Visible = true;
             agregarForm.tbID.Text = FilaID;
             agregarForm.tbNombre.Text = FilaNombre;
-            agregarForm.tbTelefono.Text = FilaTelefono;
+            agregarForm.tbTelefono.Text = RemoverFormat(FilaTelefono);
             agregarForm.Show();
             agregarForm.tbNombre.Focus();
             gbMenu.Enabled = false;
@@ -182,6 +185,13 @@ namespace AgendaTelefonica
             }
 
 
+        }
+        //Método sobre removedor de número telefónico con formato.
+        string RemoverFormat(string Numero)
+        {
+            string NumeroNuevo;
+            NumeroNuevo = Numero.Replace("(", "").Replace(")","").Replace(" ", "").Replace("-", "");
+            return NumeroNuevo;
         }
     }
 }
