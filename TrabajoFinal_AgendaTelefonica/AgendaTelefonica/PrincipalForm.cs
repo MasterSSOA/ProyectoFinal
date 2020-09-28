@@ -109,7 +109,6 @@ namespace AgendaTelefonica
             agregarForm.Show();
             agregarForm.tbNombre.Focus();
             gbMenu.Enabled = false;
-
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
