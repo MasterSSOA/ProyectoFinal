@@ -212,8 +212,6 @@
         private System.Windows.Forms.Label lbTitulo;
         public System.Windows.Forms.DataGridView dgContactos;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnBorrar;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lbMetodoBuscar;
@@ -221,6 +219,8 @@
         private System.Windows.Forms.TextBox tbCampoBuscar;
         public System.Windows.Forms.GroupBox gbMenu;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Button btnBorrar;
+        public System.Windows.Forms.Button btnEditar;
     }
 }
 

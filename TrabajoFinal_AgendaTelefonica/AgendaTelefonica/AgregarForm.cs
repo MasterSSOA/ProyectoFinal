@@ -55,6 +55,8 @@ namespace AgendaTelefonica
                     {
                         this.Hide();
                         principalForm.gbMenu.Enabled = true;
+                        principalForm.btnEditar.Enabled = false;
+                        principalForm.btnBorrar.Enabled = false;
                     }
                     else
                         tbID.Text = Convert.ToString(Convert.ToInt32(tbID.Text) + 1);
@@ -87,6 +89,8 @@ namespace AgendaTelefonica
                     RegistroActualizacion.Cells[1].Value = tbNombre.Text;
                     RegistroActualizacion.Cells[2].Value = ConvertidorFormatoTel(tbTelefono.Text);
                     principalForm.gbMenu.Enabled = true;
+                    principalForm.btnEditar.Enabled = false;
+                    principalForm.btnBorrar.Enabled = false;
                     this.Hide();
                 }
                 else
